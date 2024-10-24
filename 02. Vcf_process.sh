@@ -9,4 +9,4 @@ vcftools --gzvcf merge.gvcf.gz --extract-FORMAT-info GT --positions SNP.position
 vcftools --gzvcf merge.gvcf.gz --extract-FORMAT-info DP --chr 1 --from-bp 22375575 --to-bp 22386532 --keep Species.txt --out Sa.DP
 
 # Calculate depth  of Sa locus
-python3 03.countDP.py
+python3 03. countDP.py

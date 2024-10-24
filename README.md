@@ -3,3 +3,4 @@
 03. Calculate the missing information via the depth file.
 04. Calculate the nucleotide diversity and fixation index via VCFtools.
 05. Visualize the generated data in R.
+06. Syntenic analysis.

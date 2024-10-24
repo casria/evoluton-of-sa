@@ -16,10 +16,14 @@ gatk HaplotypeCaller -R $p/ref.fa --emit-ref-confidence GVCF \
 -I $p/02.align/${sample}.sorted.markdup.bam \
 -O $p/03.vcf/${sample}.gvcf
 
-# Transform GVCF files into one VCF file
+# Transform GVCF files into VCF file
 gatk GenotypeGVCFs -R $p/ref.fa \
 -V $p/03.vcf/${sample}.gvcf \
 -O $p/03.vcf/${sample}.vcf
 
 # Remove intermediate files
 rm $p/02.align/${sample}.sorted.bam $p/02.align/${sample}.sorted.markdup.bam
+
+# ZIP file and index file
+bgzip ${sample}.vcf
+tabix ${sample}.vcf.gz
